@@ -1,1 +1,12 @@
-<p>quote-form works!</p>
+<div class="container-fluid">
+    <h2 class="text-center">Add your ideal Quote</h2>
+    
+    <form (ngSubmit)='submitQuote()' #quoteForm='ngForm'>
+        <!-- name label -->
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" [(ngModel)]="newGoal.name" name="name" #name="ngModel" required>
+            <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+              <p> Name is Required</p>
+            </div>
+          </div>
