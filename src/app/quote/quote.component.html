@@ -7,7 +7,9 @@
   <div>
     <div class="col-md-12">
       <div class="text-center">
-        <h1>Quotes Hub</h1>
+        <i class="fa fa-quote-left" aria-hidden="true"> 
+            <h1>Quotes Hub</h1></i> 
+                
         <h4>Let's get inspired</h4>
         <hr>
       </div>
@@ -28,7 +30,7 @@
             <br>
             <button (click)="like()"><i class="fas fa-thumbs-up" aria-hidden="true"></i></button>{{ quote.likeNo }}
             <button (click)="dislike()"><i class="fas fa-thumbs-down" aria-hidden="true"></i></button>{{ quote.dislikeNo }}
-            <button class="btn btn-secondary" (click)="toggleDetails(i)">Open quote</button><br>
+            <!-- <button class="btn btn-secondary" (click)="toggleDetails(i)">Open quote</button><br> -->
             <app-quote-details *ngIf="quote.showDescription" [quote]="quote"></app-quote-details><br>
             <button class="btn btn-danger" (click)="QuoteDelete(i)">Delete</button>
           </div>

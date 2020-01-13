@@ -9,8 +9,8 @@ import { Quote } from '../quote';
 export class QuoteComponent implements OnInit {
 
   quotes: Quote[] = [
-    new Quote(1, 'We often need less than we think we needs', 'Maya Angelou', 'Alicia', new Date(2019, 5, 5), 0, 0),
-    new Quote(2, 'When someone shows you whom they are, believe them the first time only', 'Maya Angelou', 'Eve', new Date(2019, 11, 5), 0, 0)
+    new Quote(1, 'We often need less than we think we needs', 'Maya Angelou',new Date(2019, 5, 5), 0, 0),
+    new Quote(2, 'When someone shows you whom they are, believe them the first time only', 'Maya Angelou', new Date(2019, 11, 5), 0, 0)
   ]
 
   likeNo = 0;
@@ -30,7 +30,7 @@ export class QuoteComponent implements OnInit {
   }
 
   toggleDetails(index){
-    this.quotes[index].showDescription = !this.quotes[index].showDescription;
+    this.quotes[index].showDescription = this.quotes[index].showDescription;
   }
 
   addNewQuote(quote){
