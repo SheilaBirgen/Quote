@@ -1,41 +1,35 @@
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
 <link href="https://fonts.googleapis.com/css?family=Berkshire+Swash|Lobster&display=swap" rel="stylesheet">
 
-<div class="container"><!--full page-->
-  <div>
-    <div class="col-md-12">
-      <div class="text-center">
-        <i class="fa fa-quote-left" aria-hidden="true"> 
-            <h1>Quotes Hub</h1></i> 
-                
-        <h4>Let's get inspired</h4>
-        <hr>
-      </div>
-    </div>
+<div class="container">
+  <div class="col-md-12 text-center">
+    <i class="fa fa-quote-left" aria-hidden="true">
+      <h1>Quotes Hub</h1>
+    </i>
+
+    <h4>Let's get inspired</h4>
+    <hr>
   </div>
 
-  <div class="container">
-    <div class="row"><!--major container-->
-      <div class="col-md-6"><!--quotes form-->
-        <app-quote-form (addQuotes)="addNewQuote($event)"></app-quote-form>
-      </div>
-      <div class="col-md-6"><!--display quotes-->
-        <ul>
-          <div *ngFor="let quote of quotes; let i = index" class="details" >
-            <li>
-              By: {{ quote.by }}
-            </li>
-            <br>
-            <button (click)="like()"><i class="fas fa-thumbs-up" aria-hidden="true"></i></button>{{ quote.likeNo }}
-            <button (click)="dislike()"><i class="fas fa-thumbs-down" aria-hidden="true"></i></button>{{ quote.dislikeNo }}
-            <!-- <button class="btn btn-secondary" (click)="toggleDetails(i)">Open quote</button><br> -->
-            <app-quote-details *ngIf="quote.showDescription" [quote]="quote"></app-quote-details><br>
-            <button class="btn btn-danger" (click)="QuoteDelete(i)">Delete</button>
-          </div>
-        </ul>
-      </div>
+  <div class="row col-md-6">
+    <app-quote-form (addQuotes)="addNewQuote($event)"></app-quote-form>
+    <div class="col-md-6">
+      <ul>
+        <div *ngFor="let quote of quotes; let i = index" class="details">
+          <p>{{ quote.quote }}</p>
+          <li>
+            By: {{ quote.author }}
+          </li>
+          <br>
+          <button (click)="like()"><i class="fas fa-thumbs-up" aria-hidden="true"></i></button>{{ quote.likeNo }}
+          <button (click)="dislike()"><i class="fas fa-thumbs-down" aria-hidden="true"></i></button>{{ quote.dislikeNo }}
+          <button class="btn btn-secondary" (click)="toggleDetails(i)">Open quote</button><br>
+          <app-quote-details *ngIf="quote.showDescription" [quote]="quote"></app-quote-details><br>
+        </div>
+      </ul>
     </div>
   </div>
 </div>
