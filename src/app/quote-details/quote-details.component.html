@@ -1,3 +1,6 @@
 <div class="details">
     <p>{{ quote.completeDate|date }}</p>
+    <p>{{  quote.quote}}</p>
+    <button type="button" (click)="like()"><i class="fas fa-thumbs-up" aria-hidden="true" ></i><h5>{{ like }}</h5> </button><br><br><br>
+          <button type="button" (click)="dislike()"><i class="fas fa-thumbs-down" aria-hidden="true"></i>{{ dislike }}</button>
 </div>

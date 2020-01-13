@@ -19,13 +19,10 @@
     <div class="col-md-6">
       <ul>
         <div *ngFor="let quote of quotes; let i = index" class="details">
-          <p>{{ quote.quote }}</p>
           <li>
             By: {{ quote.author }}
           </li>
           <br>
-          <button (click)="like()"><i class="fas fa-thumbs-up" aria-hidden="true"></i></button>{{ quote.likeNo }}
-          <button (click)="dislike()"><i class="fas fa-thumbs-down" aria-hidden="true"></i></button>{{ quote.dislikeNo }}
           <button class="btn btn-secondary" (click)="toggleDetails(i)">Open quote</button><br>
           <app-quote-details *ngIf="quote.showDescription" [quote]="quote"></app-quote-details><br>
         </div>

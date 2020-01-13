@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { Quote } from '../quote';
+import { EventEmitter } from 'events';
 
 @Component({
   selector: 'app-quote',
@@ -10,20 +11,18 @@ export class QuoteComponent implements OnInit {
 
   quotes: Quote[] = [
     new Quote( 'We often need less than we think we needs', 'Maya Angelou',new Date(2019, 5, 5), 0, 0),
-    new Quote('When someone shows you whom they are, believe them the first time only', 'Maya Angelou', new Date(2019, 11, 5), 0, 0)
+    new Quote('When someone shows you whom they are, believe them the first time only', 'You', new Date(2019, 11, 5), 0, 0)
   ];
 
-  likeCounter = 0;
-  dislikeCounter = 0;
+  likeNo = 0;
+  dislikeNo = 0;
   
- 
-
-  like(index){
-    this.quotes[index].likeNo=+1;
+    like(){
+    this.likeNo++;
   }
 
-  dislike(index){
-    this.quotes[index].dislikeNo++;
+  dislike(){
+    this.dislikeNo++;
 
   }
   toggleDetails(index){ 
