@@ -29,8 +29,14 @@ export class QuoteComponent implements OnInit {
     this.quotes[index].showDescription = !this.quotes[index].showDescription;
   }
   
-  QuoteDelete(index){
-    this.quotes.splice(index, 1)
+  deleteQuote(isComplete, index){
+    if (isComplete) {
+      let toDelete = confirm(`Are you sure you want to delete ${this.[index].name}?`)
+
+      if (toDelete){
+        this.quotes.splice(index,1)
+      }
+    }
   }
 
   addNewQuote(quote){
@@ -39,6 +45,7 @@ export class QuoteComponent implements OnInit {
     quote.completeDate = new Date(quote.completeDate)
     this.quotes.push(quote)
   }
+
 
   constructor() { }
 
