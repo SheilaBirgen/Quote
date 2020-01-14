@@ -11,7 +11,8 @@ Angular CLI
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.21.
 # Description
 Quotes app is a project that enables one to add a quote,delete the quote,upvote and also downvote a quote.
-# Deployment Link
+## Deployment Link
+https://sheilabirgen.github.io/Quote/
 
 ## Development server
 
