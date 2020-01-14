@@ -6,6 +6,10 @@ Sheila Birgen
 ## Technologies used
 Angular CLI
 
+## Screenshots
+<img src = "assets/angular1.png">
+<img src = "assets/angular2.png">
+
 # Qoutes
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.21.
