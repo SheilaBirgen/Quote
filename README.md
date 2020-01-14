@@ -13,6 +13,11 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 Quotes app is a project that enables one to add a quote,delete the quote,upvote and also downvote a quote.
 ## Deployment Link
 https://sheilabirgen.github.io/Quote/
+## BDD
+| Behavior | Input    | Output   |
+| :------------- | :------------- | :------------- |
+| User can view the quote posted  | enters quote  | quote is posted |
+
 
 ## Development server
 
