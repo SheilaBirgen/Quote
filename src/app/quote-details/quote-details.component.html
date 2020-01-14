@@ -1,6 +1,37 @@
-<div class="details">
-    <p>{{ quote.completeDate|date }}</p>
-    <p>{{  quote.quote}}</p>
-    <button type="button" (click)="like()"><i class="fas fa-thumbs-up" aria-hidden="true" ></i><h5>{{ like }}</h5> </button><br><br><br>
-          <button type="button" (click)="dislike()"><i class="fas fa-thumbs-down" aria-hidden="true"></i>{{ dislike }}</button>
+<div>
+  <div class="blockquote lead">
+    <p>{{ quote.description }}</p>
+
+    <!-- <p class="blockquote-footer">This quote was posted: {{ quote.completeDate | timeAgo}}</p> -->
+  </div>
+  <div class="row">
+    <div>
+      <span class="m-4">{{ clickCounter }}</span>
+      <a href="#" onclick="event.preventDefault()" (click)="countClick()">
+        <i
+          class="fa fa-thumbs-up pr-4 like"
+          ng-click="count = count + 1"
+          ng-init="count=0"
+          style="color:green;"
+        ></i>
+      </a>
+    </div>
+    <div>
+      <a href="#" onclick="event.preventDefault()" (click)="countDislike()">
+        <i
+          class="fa fa-thumbs-down pr-3 dislike"
+          ng-click="count = count + 1"
+          ng-init="count=0"
+          style="color:red;"
+        ></i>
+      </a>
+      <span class="m-4">{{ dislikeCounter }}</span>
+    </div>
+    <button
+      (click)="quoteDelete(true)"
+      class="btn btn-outline-danger ml-auto mr-3"
+    >
+      <i class="fa fa-trash-o"></i>
+    </button>
+  </div>
 </div>

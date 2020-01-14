@@ -1,56 +1,100 @@
-import { Component, OnInit, Output } from '@angular/core';
-import { Quote } from '../quote';
-import { EventEmitter } from 'events';
+import { Component, OnInit } from "@angular/core";
+import { Quote } from "../quote";
 
 @Component({
-  selector: 'app-quote',
-  templateUrl: './quote.component.html',
-  styleUrls: ['./quote.component.css']
+  selector: "app-quote",
+  templateUrl: "./quote.component.html",
+  styleUrls: ["./quote.component.css"],
+  animations: [""]
 })
 export class QuoteComponent implements OnInit {
-
+  myStyle: object = {};
+  myParams: object = {};
+  width: number = 100;
+  height: number = 100;
   quotes: Quote[] = [
-    new Quote( 'We often need less than we think we needs', 'Maya Angelou',new Date(2019, 5, 5), 0, 0),
-    new Quote('When someone shows you whom they are, believe them the first time only', 'You', new Date(2019, 11, 5), 0, 0)
+    new Quote(
+      "Posted by Abdifatah",
+      "There is no true Liberation, without the liberation of a woman",
+      new Date(2019, 11, 12)
+    ),
+    new Quote(
+      "Posted by Steve Jobs",
+      "If You Are Working On Something That You Really Care About, You Don’t Have To Be Pushed. The Vision Pulls You.",
+      new Date(2019, 11, 12)
+    ),
+    new Quote(
+      "Posted by JWinston Churchill",
+      "The Pessimist Sees Difficulty In Every Opportunity. The Optimist Sees Opportunity In Every Difficulty.",
+      new Date(2019, 11, 12)
+    ),
+    new Quote(
+      "Posted By Evans",
+      "Pupper likes expensive snacks",
+      new Date(2019, 11, 12)
+    ),
+    new Quote(
+      "Posted By Unknown",
+      "You Learn More From Failure Than From Success. Don’t Let It Stop You. Failure Builds Character.",
+      new Date(2019, 11, 12)
+    ),
+    new Quote(
+      "Posted by Will Rogers",
+      "Don’t Let Yesterday Take Up Too Much Of Today.",
+      new Date(2019, 12, 1)
+    )
   ];
-
-  likeNo = 0;
-  dislikeNo = 0;
-  
-    like(){
-    this.likeNo++;
-  }
-
-  dislike(){
-    this.dislikeNo++;
-
-  }
-  toggleDetails(index){ 
+  toggleDetails(index) {
     this.quotes[index].showDescription = !this.quotes[index].showDescription;
   }
-  
-  deleteQuote(isComplete, index){
-    if (isComplete) {
-      let toDelete = confirm(`Are you sure you want to delete ${this.[index].name}?`)
 
-      if (toDelete){
-        this.quotes.splice(index,1)
+  addNewQuote(quote) {
+    let quoteLength = this.quotes.length;
+    quote.id = quoteLength + 1;
+    quote.completeDate = new Date(quote.completeDate);
+    this.quotes.push(quote);
+  }
+
+  deleteQuote(isComplete, index) {
+    if (isComplete) {
+      let toDelete = confirm(
+        `Are you sure you want to delete ${this.quotes[index].name}?`
+      );
+
+      if (toDelete) {
+        this.quotes.splice(index, 1);
       }
     }
   }
-
-  addNewQuote(quote){
-    let quoteLength = this.quotes.length;
-    quote.id = quoteLength+1;
-    quote.completeDate = new Date(quote.completeDate)
-    this.quotes.push(quote)
-  }
-
-
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
+    this.myStyle = {
+      position: "fixed",
+      width: "100%",
+      height: "100%",
+      "z-index": -1,
+      top: 0,
+      left: 0,
+      right: 0,
+      bottom: 0
+    };
+
+    this.myParams = {
+      particles: {
+        number: {
+          value: 500
+        },
+        color: {
+          value: "#ff0000"
+        },
+        shape: {
+          type: "circle",
+          polygon: {
+            nb_sides: 5
+          }
+        }
+      }
+    };
   }
-
 }
-

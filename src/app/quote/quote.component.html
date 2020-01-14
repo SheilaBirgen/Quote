@@ -1,32 +1,70 @@
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-<link href="https://fonts.googleapis.com/css?family=Berkshire+Swash|Lobster&display=swap" rel="stylesheet">
-
-<div class="container">
-  <div class="col-md-12 text-center">
-    <i class="fa fa-quote-left" aria-hidden="true">
-      <h1>Quotes Hub</h1>
-    </i>
-
-    <h4>Let's get inspired</h4>
-    <hr>
-  </div>
-
-  <div class="row col-md-6">
-    <app-quote-form (addQuotes)="addNewQuote($event)"></app-quote-form>
-    <div class="col-md-6">
-      <ul>
-        <div *ngFor="let quote of quotes; let i = index" class="details">
-          <li>
-            By: {{ quote.author }}
-          </li>
-          <br>
-          <button class="btn btn-secondary" (click)="toggleDetails(i)">Open quote</button><br>
-          <app-quote-details *ngIf="quote.showDescription" [quote]="quote"></app-quote-details><br>
-        </div>
-      </ul>
+<div class="myquote">
+  <br />
+  <br />
+  <div class="container-fluid">
+    <h1 class="text-center fadeIn">Quotes App</h1>
+    <p class="text-center">Publish your quotes today</p>
+    <div class="text-center pt-1">
+      <a href="#addquote" class="btn btn-outline-success btn-lg p-1 mybtn"
+        >Create Quote</a
+      >
     </div>
   </div>
 </div>
+<!-- <particles
+  [params]="myParams"
+  [style]="myStyle"
+  [width]="width"
+  [height]="height"
+></particles> -->
+<br />
+<div class="container-fluid">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div *ngFor="let quote of quotes; let i = index">
+          <div class="card mb-3 shadow p-3 mycard">
+            <div>
+              <h6 class="badge" id="{{ i }}" appStrikethrough>
+                {{ quote.name }}
+                <span class="blockquote-footer timeago"
+                  >This quote was posted: {{ quote.completeDate }}</span
+                >
+              </h6>
+              &nbsp;
+              <small
+                ><button
+                  (click)="toggleDetails(i)"
+                  (click)="quote.hide = !quote.hide"
+                  class="btn btn-outline-primary btn-sm"
+                >
+                  <i
+                    [ngClass]="quote.hide ? 'fa fa-minus' : 'fa fa-plus'"
+                    class="fa fa-plus"
+                  ></i></button
+              ></small>
+            </div>
+            <app-quote-details
+              *ngIf="quote.showDescription"
+              [quote]="quote"
+              (isComplete)="deleteQuote($event, i)"
+            >
+            </app-quote-details>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container" id="addquote">
+  <div class="col-md-12">
+    <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
+  </div>
+</div>
+<br />
+<footer class="page-footer font-small blue">
+  <div class="footer-copyright text-center pt-5">
+    © 2019 Copyright:
+    <a href="quote.component.html" class="link"> Birgen</a>
+  </div>
+</footer>

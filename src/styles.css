@@ -1,3 +1,1 @@
-body{
-    background-color: lightslategrey;
-}
+@import "bootstrap/dist/css/bootstrap.css";
