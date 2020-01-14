@@ -13,25 +13,20 @@ export class QuoteComponent implements OnInit {
   width: number = 100;
   height: number = 100;
   quotes: Quote[] = [
-    new Quote(
-      "Posted by Abdifatah",
-      "There is no true Liberation, without the liberation of a woman",
-      new Date(2019, 11, 12)
-    ),
-    new Quote(
-      "Posted by Steve Jobs",
-      "If You Are Working On Something That You Really Care About, You Don’t Have To Be Pushed. The Vision Pulls You.",
+     new Quote(
+      "Posted by Lord Baelish",
+      "Chaos is not a pit.Chaos is a ladder",
       new Date(2019, 11, 12)
     ),
     new Quote(
       "Posted by JWinston Churchill",
       "The Pessimist Sees Difficulty In Every Opportunity. The Optimist Sees Opportunity In Every Difficulty.",
-      new Date(2019, 11, 12)
+      new Date(2019, 8, 10)
     ),
     new Quote(
-      "Posted By Evans",
-      "Pupper likes expensive snacks",
-      new Date(2019, 11, 12)
+      "Posted By Tyrion Lannister",
+      "Never forget what you are,the rest of the world will not.Wear it like an armour and it can never be used to hurt you",
+      new Date(2019, 4, 7)
     ),
     new Quote(
       "Posted By Unknown",

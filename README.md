@@ -3,14 +3,14 @@
 ## Project's Author
 Sheila Birgen
 
-# Technologies used
+## Technologies used
 Angular CLI
 
 # Qoutes
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.21.
 # Description
-Quotes app is a project that enables one to add a quote,delete the quote,upvote and also downvote a quote.
+Quotes app is a project that enables one to add a quote by entering the name of the author and the said quote,delete the quote,upvote and also downvote a quote.
 ## Deployment Link
 https://sheilabirgen.github.io/Quote/
 ## BDD
