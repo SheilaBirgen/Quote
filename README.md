@@ -11,14 +11,17 @@ html
 jquery
 
 ## Screenshots
-![SCREENSHOT]< assets/angular1.png>
-![SCREENSHOT]< assets/angular2.png>
+![SCREENSHOT](assets/angular1.png)
+![SCREENSHOT](assets/angular2.png)
 
 # Description
 Quotes app is a project that enables one to add a quote by entering the name of the author and the said quote,delete the quote,upvote and also downvote a quote.
 
 ## Deployment Link
 https://sheilabirgen.github.io/Quote/
+
+## CODEBEAT Badge
+[![codebeat badge](https://codebeat.co/badges/4f0ee58a-c3eb-4c6b-86b6-1993b133615d)](https://codebeat.co/projects/github-com-sheilabirgen-quote-master)
 
 ## BDD
 | Behavior | Input    | Output   |
