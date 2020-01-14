@@ -5,47 +5,34 @@ Sheila Birgen
 
 ## Technologies used
 Angular CLI
+css
+bootstrap
+html
+jquery
 
 ## Screenshots
-<img src = "assets/angular1.png">
-<img src = "assets/angular2.png">
+![SCREENSHOT]< assets/angular1.png>
+![SCREENSHOT]< assets/angular2.png>
 
-# Qoutes
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.21.
 # Description
 Quotes app is a project that enables one to add a quote by entering the name of the author and the said quote,delete the quote,upvote and also downvote a quote.
+
 ## Deployment Link
 https://sheilabirgen.github.io/Quote/
+
 ## BDD
 | Behavior | Input    | Output   |
 | :------------- | :------------- | :------------- |
 | User can view the quote posted  | enters quote  | quote is posted |
 
+## Known Bugs
 
-## Development server
+As at now there is no known bug
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Support and contact details
 
-## Code scaffolding
+For any comment question or feedback reach me through this email jeronobergen@gmail.com
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 ## Licence
 
 MIT License
